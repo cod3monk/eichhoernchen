@@ -51,7 +51,7 @@ class PurchaseHistory(EmbeddedDocument):
 
 class Stock(EmbeddedDocument):
     location = ObjectIdField(Location, required=True)
-    stock = FloatFiled(required=True)
+    stock = FloatField(required=True)
 
 class StockHistory(EmbeddedDocument):
     count = FloatField(required=True)
