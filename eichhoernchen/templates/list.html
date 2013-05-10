@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}List{% endblock %}
+
+{% block content %}
+<div id="search_bar">
+    <form>
+        <input name="q" id="q" type="text"/>
+    </form>
+</div>
+
+<div id="group_trees">
+    <!-- Here two tabs from left: Category and Location -->
+    <div id="group_content">
+        <div id="group_content_categories"></div>
+        <div id="group_content_locations"></div>
+    </div>
+    <ul id="group_classlist">
+        <li>Categories</li>
+        <li>Locations</li>
+    </ul>
+</div>
+
+<div id="result_list"></div>
+{% endblock %}
