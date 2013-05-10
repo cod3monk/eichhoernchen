@@ -3,13 +3,7 @@
 {% block title %}List{% endblock %}
 
 {% block content %}
-<div id="search_bar">
-    <form>
-        <input name="q" id="q" type="text"/>
-    </form>
-</div>
-
-<div id="group_trees">
+<div id="sidebar">
     <!-- Here two tabs from left: Category and Location -->
     <div id="group_content">
         <div id="group_content_categories"></div>
@@ -21,5 +15,14 @@
     </ul>
 </div>
 
-<div id="result_list"></div>
+<div id="content">
+	<div id="search_bar">
+		<form>
+			<label for="q">I'm looking for</label>
+			<input name="q" id="q" type="text"/>
+		</form>
+	</div>
+
+	<div id="result_list"></div>
+</div>
 {% endblock %}

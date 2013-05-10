@@ -1,0 +1,102 @@
+@import "reset.scss";
+
+$outlier:    #666666;
+$lesser:     #cccccc;
+$background: #F5F7E7;
+$highlight:  #94CE18;
+$accent:     #27638C;
+$laccent:    #154B70;
+
+body {
+	background: $background;
+	font-family: Helvetica,Arial,"Liberation Sans","Bitstream Vera Sans",sans-serif;
+}
+
+#tabs {
+	background: $laccent;
+
+	ul {
+		margin: 0;
+		padding: 5px 0 0;
+		list-style: none;
+
+		li {
+			display: block;
+			float: left;
+
+			a {
+				display: block;
+				background: darken($background, 5%);
+				margin-left: 5px;
+				border-right: 1px solid #000;
+				border-bottom: 1px solid #000;
+				border-radius: 5px 5px 0 0;
+				padding: 8px 20px;
+
+				&.active {
+					padding-bottom: 9px;
+					background: $background;
+					border-bottom: none;
+
+					&:hover, &:focus, &:active {
+						background: $background;
+					}
+				}
+
+				&:link {
+					text-decoration: none;
+					color: $accent;
+				}
+
+				&:hover, &:focus, &:active {
+					text-decoration: none;
+					color: $accent;
+					background: lighten($background, 5%);
+				}
+
+				&:visited {
+					color: $laccent;
+				}
+			}
+		}
+	}
+
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+#search_bar {
+	label {
+		color: $lesser;
+		font-size: 1.5em;
+		padding: 8px .5em 0 0;
+		width: 7.5em;
+		text-align: right;
+		display: block;
+		float: left;
+	}
+
+	input {
+		font-size: 1.5em;
+		padding: 3px 5px;
+		width: calc(100% - 30px - 8em);
+		float: left;
+	}
+
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+#content {
+	margin: 15px;
+}
+
+#footer {
+	display: none;
+}
