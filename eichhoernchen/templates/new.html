@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+
+{% block title %}New{% endblock %}
+
+{% block content %}
+<div id="form">
+    <form>
+    <header id="header" class="info">
+        <h2>New</h2>
+        <div>Please describe your newly collected acorn...</div>
+    </header>
+
+    <ul>
+        <li id="fo1li1" class="notranslate">
+            <label class="desc" id="title1" for="Field1">Brief name
+                <span id="req_1" class="req">*</span>
+            </label>
+            <div>
+                <input id="Field1" name="Field1" type="text" class="field text small" value="" maxlength="16" tabindex="1" onkeyup="handleInput(this); validateRange(1, 'character');" onchange="handleInput(this);" required />
+                <label for="Field1">Maximum Allowed: <var id="rangeMaxMsg1">16</var> characters.&nbsp;&nbsp;&nbsp; <em class="currently">Currently Used: <var id="rangeUsedMsg1">0</var> characters.</em></label>
+            </div>
+        </li>
+
+        <li id="fo1li2" class="notranslate">
+            <label class="desc" id="title2" for="Field2">Long name
+                <span id="req_2" class="req">*</span>
+            </label>
+            <div>
+                <input id="Field2" name="Field2" type="text" class="field text medium" value="" maxlength="64" tabindex="2" onkeyup="handleInput(this); validateRange(2, 'character');" onchange="handleInput(this);" required />
+                <label for="Field2">Maximum Allowed: <var id="rangeMaxMsg2">64</var> characters.&nbsp;&nbsp;&nbsp; <em class="currently">Currently Used: <var id="rangeUsedMsg2">0</var> characters.</em></label>
+            </div>
+        </li>
+
+        <li id="fo1li6" class="notranslate">
+            <label class="desc" id="title6" for="Field6">Categories</label>
+    <div>
+    <select id="Field6" name="Field6" class="field select medium" onclick="handleInput(this);" onkeyup="handleInput(this);" tabindex="3" > 
+    <option value="" selected="selected">
+    </option>
+    <option value="First Choice" >
+    First Choice
+    </option>
+    <option value="Second Choice" >
+    Second Choice
+    </option>
+    <option value="Third Choice" >
+    Third Choice
+    </option>
+    </select>
+    </div>
+    </li>
+
+
+
+    <li id="fo1li5" class="notranslate">
+    <label class="desc" id="title5" for="Field5">
+    Primary Location
+    </label>
+    <div>
+    <select id="Field5" name="Field5" class="field select medium" onclick="handleInput(this);" onkeyup="handleInput(this);" tabindex="4" > 
+    <option value="" selected="selected">
+    </option>
+    <option value="First Choice" >
+    First Choice
+    </option>
+    <option value="Second Choice" >
+    Second Choice
+    </option>
+    <option value="Third Choice" >
+    Third Choice
+    </option>
+    </select>
+    </div>
+    </li>
+
+
+
+    <li id="fo1li3" 
+    class="notranslate">
+
+
+    <label class="desc" id="title3" for="Field3">
+    Description
+    </label>
+
+    <div>
+    <textarea id="Field3" 
+    name="Field3" 
+    class="field textarea small" 
+    spellcheck="true" 
+    rows="10" cols="50" 
+    tabindex="5" 
+    onkeyup="handleInput(this); "
+    onchange="handleInput(this);" 
+     ></textarea>
+
+    </div>
+
+
+
+    </li>
+
+
+    <li id="fo1li8" class="notranslate section">
+    <section>
+    <h3 id="title8">
+    Consumable Properties
+    </h3>
+    </section>
+    </li>
+
+
+    <li id="fo1li10" class="notranslate">
+    <label class="desc" id="title10" for="Field10">
+    Base Unit
+    <span id="req_10" class="req">*</span>
+    </label>
+    <div>
+    <input id="Field10" name="Field10" type="text" class="field text small" value="" maxlength="255" tabindex="6" onkeyup="handleInput(this); " onchange="handleInput(this);" required />
+    </div>
+    <p class="instruct" id="instruct10"><small>What unit is being used for calculations?</small></p>
+    </li>
+
+    <li id="fo1li9" class="notranslate section">
+    <section>
+    <h3 id="title9">
+    Sellable Properties
+    </h3>
+    </section>
+    </li>
+
+    <li id="fo1li7" class="notranslate section">
+    <section>
+    <h3 id="title7">
+    Internal
+    </h3>
+    </section>
+    </li>
+
+
+    <li id="fo1li4" 
+    class="notranslate">
+
+
+    <label class="desc" id="title4" for="Field4">
+    Private Comment
+    </label>
+
+    <div>
+    <textarea id="Field4" 
+    name="Field4" 
+    class="field textarea small" 
+    spellcheck="true" 
+    rows="10" cols="50" 
+    tabindex="7" 
+    onkeyup="handleInput(this); "
+    onchange="handleInput(this);" 
+     ></textarea>
+
+    </div>
+
+
+
+    </li>
+
+
+
+
+
+    <li class="buttons ">
+    <div>
+                        <input id="saveForm" name="saveForm" class="btTxt submit" 
+        type="submit" value="Submit" onmousedown="doSubmitEvents();" />
+    </li>
+    </ul>
+    </form>
+</div>
+{% endblock %}

@@ -3,7 +3,7 @@
 
 from mongoengine import *
 
-connect('eichhörnchen')
+connect(u'eichhörnchen')
 
 class Location(Document):
     name = StringField(required=True, unique_with='parent', max_length=16)
@@ -62,7 +62,7 @@ class StockHistory(EmbeddedDocument):
 class Consumable(Object):
     meta = {'allow_inheritance': True}
     
-    base_unit = StringField(required=True)
+    base_unit = StringField(required=True, help_text="What unit is being used for calculations?")
     stocks = ListField(EmbeddedDocumentField(Stock))
     stock_history = ListField(EmbeddedDocumentField(StockHistory))
     quota = FloatField(required=True, default=0)
