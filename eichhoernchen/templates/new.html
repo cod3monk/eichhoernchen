@@ -120,6 +120,27 @@
     </div>
     <p class="instruct" id="instruct10"><small>What unit is being used for calculations?</small></p>
     </li>
+    
+    <li id="fo1li10" class="notranslate">
+    <label class="desc" id="title10" for="Field10">
+    Stock
+    <span id="req_10" class="req">*</span>
+    </label>
+    <div>
+    <input id="Field10" name="Field10" type="text" class="field text small" value="" maxlength="255" tabindex="6" onkeyup="handleInput(this); " onchange="handleInput(this);" required />
+    </div>
+    <p class="instruct" id="instruct10"><small>Current amount in base units.</small></p>
+    </li>
+    
+    <li id="fo1li10" class="notranslate">
+    <label class="desc" id="title10" for="Field10">
+    Restock warning threshold
+    </label>
+    <div>
+    <input id="Field10" name="Field10" type="text" class="field text small" value="" maxlength="255" tabindex="6" onkeyup="handleInput(this); " onchange="handleInput(this);" required />
+    </div>
+    <p class="instruct" id="instruct10"><small>Minimum amount in base units.</small></p>
+    </li>
 
     <li id="fo1li9" class="notranslate section">
     <section>
@@ -127,6 +148,57 @@
     Sellable Properties
     </h3>
     </section>
+    </li>
+    
+    <li id="fo1li5" class="notranslate">
+    <label class="desc" id="title5" for="Field5">
+    Sale Location
+    </label>
+    <div>
+    <select id="Field5" name="Field5" class="field select medium" onclick="handleInput(this);" onkeyup="handleInput(this);" tabindex="4" > 
+    <option value="" selected="selected">
+    </option>
+    <option value="First Choice" >
+    First Choice
+    </option>
+    <option value="Second Choice" >
+    Second Choice
+    </option>
+    <option value="Third Choice" >
+    Third Choice
+    </option>
+    </select>
+    </div>
+    </li>
+    
+    <!-- MULTIPLES OF: -->
+    <li id="fo1li10" class="notranslate">
+    <label class="desc" id="title10" for="Field10">
+    Sale Price
+    </label>
+    <div>
+    <input id="Field10" name="Field10" type="text" class="field text small" value="" maxlength="255" tabindex="6" onkeyup="handleInput(this); " onchange="handleInput(this);" required />
+    </div>
+    </li>
+    
+    <li id="fo1li10" class="notranslate">
+    <label class="desc" id="title10" for="Field10">
+    Quantity
+    </label>
+    <div>
+    <input id="Field10" name="Field10" type="text" class="field text small" value="" maxlength="255" tabindex="6" onkeyup="handleInput(this); " onchange="handleInput(this);" required />
+    </div>
+    <p class="instruct" id="instruct10"><small>Amount in base units for this price.</small></p>
+    </li>
+    
+    <li id="fo1li10" class="notranslate">
+    <label class="desc" id="title10" for="Field10">
+    Calculation Factor
+    </label>
+    <div>
+    <input id="Field10" name="Field10" type="text" class="field text small" value="" maxlength="255" tabindex="6" onkeyup="handleInput(this); " onchange="handleInput(this);" required />
+    </div>
+    <p class="instruct" id="instruct10"><small>Factor used to calculate new price after restocking.</small></p>
     </li>
 
     <li id="fo1li7" class="notranslate section">
@@ -143,7 +215,7 @@
 
 
     <label class="desc" id="title4" for="Field4">
-    Private Comment
+    Comment
     </label>
 
     <div>
