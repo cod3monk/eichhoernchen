@@ -1,0 +1,75 @@
+@import "reset.scss";
+
+$outlier:    #666666;
+$background: #F5F7E7;
+$highlight:  #94CE18;
+$accent:     #27638C;
+$laccent:    #154B70;
+
+body {
+	background: $background;
+}
+
+#tabs {
+	background: $laccent;
+
+	ul {
+		margin: 0;
+		padding: 5px 0 0;
+		list-style: none;
+
+		li {
+			display: block;
+			float: left;
+
+			a {
+				display: block;
+				background: darken($background, 5%);
+				margin-left: 5px;
+				border-right: 1px solid #000;
+				border-bottom: 1px solid #000;
+				border-radius: 5px 5px 0 0;
+				padding: 8px 20px;
+
+				&.active {
+					padding-bottom: 9px;
+					background: $background;
+					border-bottom: none;
+
+					&:hover, &:focus, &:active {
+						background: $background;
+					}
+				}
+
+				&:link {
+					text-decoration: none;
+					color: $accent;
+				}
+
+				&:hover, &:focus, &:active {
+					text-decoration: none;
+					color: $accent;
+					background: lighten($background, 5%);
+				}
+
+				&:visited {
+					color: $laccent;
+				}
+			}
+		}
+	}
+
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+#content {
+	display: none;
+}
+
+#footer {
+	display: none;
+}

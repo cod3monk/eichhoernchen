@@ -9,7 +9,14 @@
 </head>
 
 <body>
-    <div id="tabs"><ul><li>home</li><li>list</li><li>new</li><li>stock-taking</li></ul></div>
+	<div id="tabs">
+		<ul>
+			<li><a class="active" href="#home">home</a></li>
+			<li><a href="#list">list</a></li>
+			<li><a href="#new">new</a></li>
+			<li><a href="#stock-taking">stock-taking</a></li>
+		</ul>
+	</div>
     <div id="content">
         {% block content %}{% endblock %}
     </div>
