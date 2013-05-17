@@ -24,17 +24,6 @@ class Category(Document):
         "in this category")
     description = StringField()
 
-class Object(DynamicDocument):
-    meta = {'allow_inheritance': True}
-    
-    id = SequenceField(primary_key=True)
-    name = StringField(required=True, max_length=16, help_text="Short description of object")
-    longname = StringField(required=True, max_length=64, help_text="Longer description of object")
-    description = StringField(help_text="Lengthy description of object (optional)")
-    primary_location = ObjectIdField(Location)
-    category = ListField(ObjectIdField(Category))
-    comment = StringField()
-
 class Company(DynamicDocument):
     name = StringField(primary_key=True)
     website = URLField()
@@ -59,16 +48,6 @@ class StockHistory(EmbeddedDocument):
     date = DateTimeField(required=True)
     location = ObjectIdField(Location, required=True)
 
-class Consumable(Object):
-    meta = {'allow_inheritance': True}
-    
-    base_unit = StringField(required=True, help_text="What unit is being used for calculations?")
-    stocks = ListField(EmbeddedDocumentField(Stock))
-    stock_history = ListField(EmbeddedDocumentField(StockHistory))
-    quota = FloatField(required=True, default=0)
-    last_ordered = DateTimeField()
-    purchase_history = ListField(EmbeddedDocumentField(PurchaseHistory))
-
 class SalePrice(EmbeddedDocument):
     price = FloatField(required=True)
     quantity = FloatField(required=True, help_text="What quantity does this price apply to, in "+
@@ -77,6 +56,22 @@ class SalePrice(EmbeddedDocument):
     calculation_factor = FloatField(default=1.0, help_text="Used in calculation if purchase "+
         "price changes.")
 
-class Sellable(Consumable):
-    sale_location = ObjectIdField(Location, required=True)
+class Object(DynamicDocument):
+    ean = SequenceField(unique=True)
+    name = StringField(required=True, max_length=16, help_text="Short description of object")
+    longname = StringField(required=True, max_length=64, help_text="Longer description of object")
+    description = StringField(help_text="Lengthy description of object (optional)")
+    primary_location = ObjectIdField(Location) # This is also the sale_location
+    category = ListField(ObjectIdField(Category))
+    comment = StringField()
+    
+    # The following attributes are needed for consumable objects:
+    base_unit = StringField(help_text="What unit is being used for calculations?")
+    stocks = ListField(EmbeddedDocumentField(Stock))
+    stock_history = ListField(EmbeddedDocumentField(StockHistory))
+    quota = FloatField(default=0)
+    last_ordered = DateTimeField()
+    purchase_history = ListField(EmbeddedDocumentField(PurchaseHistory))
+    
+    # The following attributes are needed for sellable objects:\
     sale_prices = ListField(EmbeddedDocumentField(SalePrice))
