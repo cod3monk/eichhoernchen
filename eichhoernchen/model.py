@@ -25,7 +25,7 @@ class Category(Document):
     description = StringField()
 
 class Company(DynamicDocument):
-    name = StringField(primary_key=True)
+    name = StringField(unique=True)
     website = URLField()
     email = EmailField()
     telephone = StringField()
