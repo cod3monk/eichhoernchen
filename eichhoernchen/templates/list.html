@@ -1,18 +1,19 @@
 {% extends "base.html" %}
-
+{% block head_append %}
+	<script type="text/javascript" src="static/js/search.js"></script>
+{% endblock %}
 {% block title %}List{% endblock %}
-
 {% block content %}
 <div id="sidebar">
-    <!-- Here two tabs from left: Category and Location -->
-    <div id="group_content">
-        <div id="group_content_categories"></div>
-        <div id="group_content_locations"></div>
-    </div>
-    <ul id="group_classlist">
-        <li>Categories</li>
-        <li>Locations</li>
-    </ul>
+	<!-- Here two tabs from left: Category and Location -->
+	<div id="group_content">
+		<div id="group_content_categories"></div>
+		<div id="group_content_locations"></div>
+	</div>
+	<ul id="group_classlist">
+		<li>Categories</li>
+		<li>Locations</li>
+	</ul>
 </div>
 
 <div id="content">

@@ -3,9 +3,12 @@
 <head>
 	{% block head %}
 	<meta name="content-type" content="text/html;charset=utf-8"/>
-    <link rel="stylesheet" href="static/style.css" />
-    <title>{% block title %}Start{% endblock %} :: Eichhörnchen</title>
-    {% endblock %}
+	<link rel="stylesheet" href="static/css/style.css" />
+	<script type="text/javascript" src="static/js/jquery-2.0.0.min.js"></script>
+	<title>{% block title %}Start{% endblock %} :: Eichhörnchen</title>
+	{% endblock %}
+	{% block head_append %}
+	{% endblock %}
 </head>
 
 <body>
@@ -17,13 +20,13 @@
 			<li><a href="#stock-taking">stock-taking</a></li>
 		</ul>
 	</div>
-    <div id="wrapper">
-        {% block content %}{% endblock %}
-    </div>
-    <div id="footer">
-        {% block footer %}
-        &copy; Eichhörnchen at <a href="http://eichhörnchen.fablab.fau.de/">FAU FabLab</a>.
-        {% endblock %}
-    </div>
+	<div id="wrapper">
+		{% block content %}{% endblock %}
+	</div>
+	<div id="footer">
+		{% block footer %}
+		&copy; Eichhörnchen at <a href="http://eichhörnchen.fablab.fau.de/">FAU FabLab</a>.
+		{% endblock %}
+	</div>
 </body>
 </html>
