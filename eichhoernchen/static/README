@@ -1,0 +1,3 @@
+To generate the stylesheets, run make in this directory. You will need a SCSS
+transform tool installed. On Macs, you can get one using
+  port install rb19-sass
