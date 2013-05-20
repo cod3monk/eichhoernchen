@@ -14,9 +14,9 @@ $(function() {
 			return;
 		}
 
-		var queryString = qField.val();
-		if (queryString.trim() == '') {
-			// don't send a request, if the query is empty
+		var queryString = qField.val().trim();
+		if (queryString == '') {
+			// don't send a request if the query is empty
 			$('#result_list').text('');
 			return;
 		}
