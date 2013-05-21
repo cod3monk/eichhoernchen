@@ -55,7 +55,7 @@ class UserQuery:
             if op == '=':
                 filter_[key] = value
             elif op == ':':
-                filter_[key] = value
+                filter_[key] = {"$regex": ".*"+re.escape(value)+".*", "$options": "i"}
             elif op == '!':
                 if key in filter_:
                     filter_[key]["$ne"] = value
@@ -91,7 +91,8 @@ class UserQuery:
         return {'search': ' '.join(words), 
                 'filter': filter_, 
                 'language': UserQuery.language,
-                'limit': limit}, sorters
+                'limit': limit,
+                'sorters': sorters}
 
 if __name__ == "__main__":
     qs = """

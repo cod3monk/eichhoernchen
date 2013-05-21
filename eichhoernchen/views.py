@@ -11,6 +11,8 @@ import flask
 import json
 import random
 
+import querier
+
 def match_ip_or_403(allowed_ips):
     def decorator(fnct):
         def wrapper(*args, **kwargs):
@@ -33,7 +35,11 @@ class ObjectSearch(restful.Resource):
         
         if 'q' in request.args:
             # TODO: parse argument *q* and use as filter
-            return []
+            q = querier.UserQuery.parse(request.args['q'])
+            
+            data =  list(model.Object.find(q['filter']).limit(q['limit']))
+            # TODO make use of new (full)text index
+            # See: http://emptysquare.net/blog/mongodb-full-text-search/
         else:
             # By default we return the first five objects
             data = list(model.Object.find().limit(5))
