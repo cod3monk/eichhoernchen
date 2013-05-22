@@ -37,9 +37,14 @@ class ObjectSearch(restful.Resource):
             # TODO: parse argument *q* and use as filter
             q = querier.UserQuery.parse(request.args['q'])
             
-            data =  list(model.Object.find(q['filter']).limit(q['limit']))
-            # TODO make use of new (full)text index
+            # makeing use of new (full)text index
             # See: http://emptysquare.net/blog/mongodb-full-text-search/
+            if q['search']:
+                data = model.db.command('text', model.Object.collection_name, 
+                    search=q['search'], filter=q['filter'], language=q['language'], limit=q['limit'])
+                data = map(lambda x: model.Object.from_pymongo(x['obj']), data['results'])
+            else:
+                data =  list(model.Object.find(q['filter']).limit(q['limit']))
         else:
             # By default we return the first five objects
             data = list(model.Object.find().limit(5))

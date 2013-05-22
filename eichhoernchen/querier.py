@@ -10,7 +10,7 @@ class UserQuery:
     modifier_regex = r'((?:"[^"]+)"|(?:\S+))(['+re.escape(operators)+']=?)((?:"[^"]+")|(?:\S+))'
     
     # The mongodb language to be used for searches
-    language = 'english'
+    language = 'german'
 
     @staticmethod
     def parse(q, limit=100):
